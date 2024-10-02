@@ -29,7 +29,10 @@ The clear command is used to clear the previous steps and reshape the page. [¹]
 ### 2.SSH key authentication: 
 - First, generate SSH keys locally (from your laptop) with the command "ssh-keygen -t ed25519"
 - secondly, copy the public key generated with the command ssh-keygen -t ed25519 to the remote server with the command: "ssh-copy-id username@IP address"
-- disable password authentication for more secure connection with : 
+- disable password authentication for more secure connection with : "ssh -i id-ed25519 username@IP adress"
+
+### 3.file transfer with SCP and SFTP:
+SCP differs from other file transfer methods by using SSH for data transfer, offering security through encryption. The SFTP protocol enables you to transfer files securely. It secures files using SSH encryption only
  
  
 
