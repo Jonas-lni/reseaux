@@ -27,8 +27,9 @@ The clear command is used to clear the previous steps and reshape the page. [¹]
     - the connection to the remote server is checked with the following commands: ls - pwd and whoami
 
 ### 2.SSH key authentication: 
-First, generate SSH keys locally (from your laptop) with the command "ssh-keygen -t ed25519"
-secondly, copy the public key generated with the command ssh-keygen -t ed25519 to the remote server with the command: "ssh-copy-id username@IP address"
+- First, generate SSH keys locally (from your laptop) with the command "ssh-keygen -t ed25519"
+- secondly, copy the public key generated with the command ssh-keygen -t ed25519 to the remote server with the command: "ssh-copy-id username@IP address"
+- disable password authentication for more secure connection with : 
  
  
 
