@@ -1,4 +1,4 @@
-# SSH PROTOCOL (SECURE SHELL)==
+# SSH PROTOCOL (SECURE SHELL) 
 ## Contents
 1. Introduction 
 2. List of manipulations carried out 
@@ -138,7 +138,16 @@ Fail2ban is an intrusion prevention framework written in Python. It runs on POSI
 
 * Restart Fail2Ban: sudo service restart fail2ban   **my system doesn't use systemd, it uses service** 
 
- 
+### 6. Installing and launching Wireshark
+Wireshark is a free packet analyzer. It is used in computer network troubleshooting and analysis, protocol development, education and reverse engineering.
+
+#### 6-1- Installing wireshark
+To install wireshark, use the following commands :
+```sudo apt update```
+```sudo apt install wireshark```
+
+#### 6-2- Launching wireshark
+Start wireshark with the following command: ```sudo wireshark```
 
 ## 3. Problems encountered and solutions found 
 ### 3-1- redirect local port 8080 to port 80 on my remote server
@@ -173,5 +182,29 @@ On the local browser, I wrote the command: `ssh -L localhost:80 username@IP-adre
        - I add port 2222 again with the command: `sudo ufw allow 2222`.
    6. I restart my remote server with the command: `sudo reboot`.
    7. I enter the command `ssh -p 2222 username@IP-adress` and it works, the port has been **successfully changed**.
+      
+## 4. Theoretical analysis
+* The major advantage offered by SSH over its predecessors is the use of encryption to ensure the secure transfer of information between host and client. Host refers to the remote server you are trying to access, while client is the computer you are using to access the host
+* By default, port 22 is used to establish an SSH connection. This port is automatically entered when your operating system is installed. To reduce the number of brute-force attacks, you can configure another port for secure SSH access. The advantage of this technique is that it prevents hackers from attempting an attack via port 22
+* and fail2ban takes charge of analyzing the logs of various services installed on the machine, to automatically ban a host via iptables for a set period of time, in the event of failure after X attempts. This is an essential element in securing your system, and preventing brute-force intrusions.
+* Wireshark scans the network for information on incoming and outgoing packets.
 
+## 5. Conclusion
+The SSH (Secure Shell) protocol is an essential tool for establishing secure remote connections, mainly used for accessing Unix/Linux systems. Here's a summary of what you'll learn about SSH and how to manage secure connections:
+SSH functionality: SSH enables secure connection to a server by encrypting the data exchanged. This protects sensitive information from interception.
+Authentication: SSH offers several authentication methods, including password and public key authentication. Key authentication is often preferred for its enhanced security.
+Encryption: Data is encrypted using robust algorithms, guaranteeing the confidentiality and integrity of communications.
+Tunneling: SSH enables tunneling, which means it can secure other communication protocols (such as HTTP) by encapsulating them within an SSH connection.
+File transfer: Tools such as SCP (Secure Copy Protocol) and SFTP (SSH File Transfer Protocol) facilitate secure file transfer.
+Secure configuration: It's important to configure the SSH server correctly (e.g. disable password authentication if public keys are used, change the default port, etc.) to enhance security.
+User management: It is essential to manage the users who have access to the server, and to limit privileges to reduce risks.
+Monitoring and logging: SSH connection monitoring and activity logging help detect suspicious behavior and improve overall security.
+In short, SSH is a fundamental tool for ensuring secure remote connections, and its proper configuration and use are crucial to system protection.
 
+## 6. Resources
+* hostinger.fr
+* cloudflare.com
+* ultahost.com
+* cyber.gouv.fr
+* bibmath.net
+* chatgpt 
