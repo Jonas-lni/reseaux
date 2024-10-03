@@ -1,4 +1,4 @@
-# SSH PROTOCOL (SECURE SHELL)
+# SSH PROTOCOL (SECURE SHELL)==
 ## Contents
 1. Introduction 
 2. List of manipulations carried out 
@@ -34,7 +34,7 @@ The clear command is used to clear the previous steps and reshape the page. [¹]
 
 ### 2. SSH key authentication
 
-#### 2.1-Generating and using SSH keys
+  #### 2.1-Generating and using SSH keys
 - /Generate an ssh key to set up authentication and secure connections.
 - /The command to type locally is: `ssh-keygen -t ed25519`.
 
@@ -57,14 +57,15 @@ Enter the same passphrase again:`
 - /The private key is saved in `~/.ssh/id_rsa` and the public key in
 `~/.ssh/id_rsa.pub.`
 
-- /Install the public key in the remote server with the command: `ssh-copy-id username@IP-adress`.
+#### 2.2-Disable password authentication 
+Install the public key in the remote server with the command: `ssh-copy-id username@IP-adress`.
     
 - /Connect to remote server without password from computer in use
-- Test connection with SSH key, without password: `ssh username@IP-adress` works
+- Test connection with SSH key, without password: `ssh username@IP-adress` **it's works**
 
 
-### 3. File transfer with SCP and SFTP
-#### 1. Using SCP (Secure Copy) to transfer files
+  ### 3. File transfer with SCP and SFTP
+    #### 1. Using SCP (Secure Copy) to transfer files
 The purpose of SCP (Secure Copy) is to transfer files between the local machine and a remote server via SCP.
 
 * Create a local file: echo “This is a test file” > toto.txt
@@ -73,7 +74,7 @@ The purpose of SCP (Secure Copy) is to transfer files between the local machine 
 
 
 
-#### 2. Using SFTP for interactive transfer
+    #### 2. Using SFTP for interactive transfer
 SFTP (Secure File Transfer Protocol) is a secure file transfer protocol that uses secure shell encryption to provide a high level of security for sending and receiving files. 
 
 
@@ -84,8 +85,10 @@ You can navigate with the `ls` command, then `cd/home/username/`.
 
 Transfer a file to the server with the command: `put fichier.txt`.
 
-### 4. SSH tunnel creation and port forwarding
-#### 1. Local redirection with SSH to secure a remote service via an SSH tunnel.
+  ### 4. SSH tunnel creation and port forwarding
+  
+ #### 1. Local redirection with SSH to secure a remote service via an SSH tunnel
+    
 The steps to follow are :
 
 * Install the Nginx web service with the command `sudo apt install nginx`.
@@ -96,19 +99,35 @@ The steps to follow are :
 *To implement the changes made to the server configuration, we can type the command `sudo systemctl reload ssh`.
 
 Redirect local port 8080 to port 80 on a remote server: `ssh -L 8080:localhost:80 username@IP-adress`.
-#### 2.  Access the application via the local port:
+  #### 2.  Access the application via the local port:
  Open a browser and go to http://localhost:8080.
 
-### 5. 
+  ### 5. Securing the SSH server
+  #### 5-1. change SSH port 
+    
+ explain 
+
+So I'm going to change the default SSH port 
+
+   1. I delete port 22 in the IONOS remote server panel 
+   2. I authorize port 2222 in the IONOS remote server panel 
+   3. I reboot the server with the command `sudo reboot`.
+   4. Problem -> I can't connect to my remote server since I deleted port 22
+**the solution is explained in the problems encountered and solutions found section**.
+
+ #### 5-2. Restart the SSH service 
+    
+to apply the changes once you have implemented the solutions (see Problems encountered and solutions found). 
+Command:  `sudo systemctl restart ssh`
+
+Connect to the new port Command : `ssh -p username@ip address`
+
+And it works
 
 
 
-
-
-
-
-## 3. Problems encountered and solutions found 
-## 1. redirect local port 8080 to port 80 on my remote server
+### 3. Problems encountered and solutions found 
+  ### 1. redirect local port 8080 to port 80 on my remote server
 
 ### Enable UFW :
 By default, UFW is configured to deny all incoming traffic and allow all outgoing traffic. This means that no one else can access your system, while you can make outgoing requests from any application or service.
@@ -122,5 +141,23 @@ By default, UFW is configured to deny all incoming traffic and allow all outgoin
 On the local browser, I wrote the command: ssh -L localhost:80 username@IP-adresses
 
 It worked 
+
+  ### 2. Securing the SSH server
+
+    ### change SSH port
+By deleting port 22 in the remote server panel, I can't connect to my remote server 
+
+**Solution**:
+
+   1. I connect to my remote server's console root
+   2. I uncomment port 22 by removing the #.
+   3. I add port 2222 above port 22, then validate with ctrl X -> enter, then reboot the server with the command: `sudo reboot`.
+   5. Still in the remote server console, I follow the next steps:
+       - I open the ports authorized by my server's firewall :
+               with the following command: `sudo ufw status numbered`. 
+       - I delete port 2222 with the command: `sudo ufw delete port number`.
+       - I add port 2222 again with the command: `sudo ufw allow 2222`.
+   6. I restart my remote server with the command: `sudo reboot`.
+   7. I enter the command `ssh -p 2222 username@IP-adress` and it works, the port has been successfully changed.
 
 
