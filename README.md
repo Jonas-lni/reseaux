@@ -123,7 +123,22 @@ Command:  `sudo systemctl restart ssh`
 
 **And it works**
 
+#### 5-2- Configuring Fail2Ban
+Fail2ban is an intrusion prevention framework written in Python. It runs on POSIX systems with a packet control interface (such as TCP Wrapper) or a firewall (such as Netfilter).
 
+* Install Fail2Ban with the following command `sudo apt install fail2ban`
+* Configure Fail2Ban for SSH: `sudo nano /etc/fail2ban/jail.local`
+* adding the following section:
+  
+    [sshd]
+  
+    enabled = true
+  
+    port = 2222
+
+* Restart Fail2Ban: sudo service restart fail2ban   **my system doesn't use systemd, it uses service** 
+
+ 
 
 ## 3. Problems encountered and solutions found 
 ### 3-1- redirect local port 8080 to port 80 on my remote server
@@ -131,13 +146,14 @@ Command:  `sudo systemctl restart ssh`
 ### Enable UFW :
 By default, UFW is configured to deny all incoming traffic and allow all outgoing traffic. This means that no one else can access your system, while you can make outgoing requests from any application or service.
 
-*when I activated the firewall on my IONOS server with the command `sudo ufw enable`, it was impossible to receive requests from the outside (local server)*.
+*when I activated the firewall on my IONOS server with the command `sudo ufw enable`, it was impossible to receive requests from the outside (local server)*
 
-    1. I authorized the SSH port with the command sudo `ufw allow 'OpenSSH`.
-    2. I authorized ports 80 and 443 with the command `sudo ufw allow 'Nginx Full`.
-    3. I then restarted the firewall to apply the changes with the command: `sudo ufw reload`.
+     1- I authorized the SSH port with the command `sudo ufw allow 'OpenSSH'`
+     2  I authorized ports 80 and 443 with the command `sudo ufw allow 'Nginx Full'`
+     3- I then restarted the firewall to apply the changes with the command `sudo ufw reload` 
 
-On the local browser, I wrote the command: ssh -L localhost:80 username@IP-adresses
+
+On the local browser, I wrote the command: `ssh -L localhost:80 username@IP-adresses`
 
 **It worked** 
 
