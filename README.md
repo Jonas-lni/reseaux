@@ -20,8 +20,8 @@ In this step-by-step exercise, I've set up a secure connection between my comput
   -  Home Phone []: 
   -  Other []:
   -  Is the information correct? [Y/n] ---> yes
-- info: Adding new user `user' to supplemental / extra groups `users'...
-- info: Adding user `user' to group `users' ... (the user is created)
+- info: Adding new user `user' to supplemental / extra groups users'...
+- info: Adding user `user' to group users' ... (the user is created)
 
 The clear command is used to clear the previous steps and reshape the page. [¹]
 - Ssh user@ip-adress (server) - password with which I created the user -----> connection to remote server is established
