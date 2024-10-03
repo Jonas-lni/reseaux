@@ -1,12 +1,17 @@
 # SSH PROTOCOL (SECURE SHELL)
-
-## SSH protocol definition:
-
+## Contents
+1. Introduction 
+2. List of manipulations carried out 
+3. Problems encountered and solutions 
+4. Theoretical analysis
+5. Conclusion
+6. Resources 
+## 1. Introduction :
 The Secure Shell (SSH) protocol is a method of sending commands securely to a computer on an unsecured network. SSH uses cryptography to authenticate with a key and encrypt connections between devices. SSH also enables tunnelling, or port forwarding, i.e. packets can traverse networks that they would not otherwise be able to cross. SSH is often used to control servers remotely, to manage infrastructure and transfer files.
 
 In this step-by-step exercise, I've set up a secure connection between my computer and an ubuntu virtual server on IONOS, using the SSH protocol. 
 
-## List of manipulatios performed:
+## 2. List of manipulatios performed:
 ### 1.create an SSH profile for a remote connection to my IONOS server: 
 - connect to the remote server with the following command : `ssh root@ IP-adress` and the password of the remote server that I use in my server account
 - I create a user with the following command: adduser "name of the user I want to create" 
@@ -80,7 +85,7 @@ You can navigate with the `ls` command, then `cd/home/username/`.
 Transfer a file to the server with the command: `put fichier.txt`.
 
 ### 4. SSH tunnel creation and port forwarding
-1. Local redirection with SSH to secure a remote service via an SSH tunnel.
+#### 1. Local redirection with SSH to secure a remote service via an SSH tunnel.
 The steps to follow are :
 
 * Install the Nginx web service with the command `sudo apt install nginx`.
@@ -91,6 +96,31 @@ The steps to follow are :
 *To implement the changes made to the server configuration, we can type the command `sudo systemctl reload ssh`.
 
 Redirect local port 8080 to port 80 on a remote server: `ssh -L 8080:localhost:80 username@IP-adress`.
-3.  Access the application via the local port:
+#### 2.  Access the application via the local port:
  Open a browser and go to http://localhost:8080.
+
+### 5. 
+
+
+
+
+
+
+
+## 3. Problems encountered and solutions found 
+## 1. redirect local port 8080 to port 80 on my remote server
+
+### Enable UFW :
+By default, UFW is configured to deny all incoming traffic and allow all outgoing traffic. This means that no one else can access your system, while you can make outgoing requests from any application or service.
+
+*when I activated the firewall on my IONOS server with the command `sudo ufw enable`, it was impossible to receive requests from the outside (local server)*.
+
+    1. I authorized the SSH port with the command sudo `ufw allow 'OpenSSH`.
+    2. I authorized ports 80 and 443 with the command `sudo ufw allow 'Nginx Full`.
+    3. I then restarted the firewall to apply the changes with the command: `sudo ufw reload`.
+
+On the local browser, I wrote the command: ssh -L localhost:80 username@IP-adresses
+
+It worked 
+
 
