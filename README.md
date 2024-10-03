@@ -8,7 +8,7 @@ In this step-by-step exercise, I've set up a secure connection between my comput
 
 ## List of manipulatios performed:
 ### 1.create an SSH profile for a remote connection to my IONOS server: 
-- connect to the remote server with the following command : ssh root@ IP-adress and the password of the remote server that I use in my server account
+- connect to the remote server with the following command : `ssh root@ IP-adress` and the password of the remote server that I use in my server account
 - I create a user with the following command: adduser "name of the user I want to create" 
 - I give a password to the user I've created, then confirm the password by writing it a second time
   - passwd: password unchanged
@@ -27,18 +27,70 @@ The clear command is used to clear the previous steps and reshape the page. [¹]
 - Ssh user@ip-adress (server) - password with which I created the user -----> connection to remote server is established
 - The connection to the remote server is checked with the following commands: ls - pwd and whoami
 
-### 2.SSH key authentication: 
-- First, generate SSH keys locally (from your laptop) with the command
-   ```bash
-  ssh-keygen -t ed25519"
+### 2. SSH key authentication
 
-- secondly, copy the public key generated with the command `ssh-keygen -t ed25519`
-- copy the public key to the remote server with the command: `ssh-copy-id username@IP address`
-- disable password authentication for more secure connection with : `ssh -i id-ed25519 username@IP adress`
+#### 2.1-Generating and using SSH keys
+- /Generate an ssh key to set up authentication and secure connections.
+- /The command to type locally is: `ssh-keygen -t ed25519`.
 
-### 3.file transfer with SCP and SFTP:
-SCP differs from other file transfer methods by using SSH for data transfer, offering security through encryption. The SFTP protocol enables you to transfer files securely. It secures files using SSH encryption only
- 
+- The ssh-keygen command will now display the SSH key fingerprint and the random image of the public key. Here's what the output should look like from start to finish:
+
+`ssh-keygen -t ed25519`
+
+Generating public/private ed25519 key pair
+
+Enter file in which to save the key (/home/local_username/.ssh/id_ed25519):`
+
+`Enter passphrase (empty for no passphrase):`
+
+Enter the same passphrase again:`
+
+`Your identification has been saved in /home/local_username/.ssh/id_ed25519`
+
+`Your public key has been saved in /home/local_username/.ssh/id_ed25519`
+
+- /The private key is saved in `~/.ssh/id_rsa` and the public key in
+`~/.ssh/id_rsa.pub.`
+
+- /Install the public key in the remote server with the command: `ssh-copy-id username@IP-adress`.
+    
+- /Connect to remote server without password from computer in use
+- Test connection with SSH key, without password: `ssh username@IP-adress` works
 
 
+### 3. File transfer with SCP and SFTP
+#### 1. Using SCP (Secure Copy) to transfer files
+The purpose of SCP (Secure Copy) is to transfer files between the local machine and a remote server via SCP.
+
+* Create a local file: echo “This is a test file” > toto.txt
+* to transfer the file to the remote server, issue the command `scp toto.txt username@server IP address:/home/username/`.
+* to check the file on the server, write the command `ssh username@IP-adress “ls -l /home/username/`
+
+
+
+#### 2. Using SFTP for interactive transfer
+SFTP (Secure File Transfer Protocol) is a secure file transfer protocol that uses secure shell encryption to provide a high level of security for sending and receiving files. 
+
+
+
+* SFTP connection for browsing and transferring files, the command to use is: ` sftp username@server IP address`.
+
+You can navigate with the `ls` command, then `cd/home/username/`. 
+
+Transfer a file to the server with the command: `put fichier.txt`.
+
+### 4. SSH tunnel creation and port forwarding
+1. Local redirection with SSH to secure a remote service via an SSH tunnel.
+The steps to follow are :
+
+* Install the Nginx web service with the command `sudo apt install nginx`.
+* Check UFW status with `sudo ufw status` if it's not enabled, you need to enable it with `sudo ufw enable` or authorize HTTP connections with `sudo ufw allow 80` / HTTPS connections with `sudo ufw allow 443`.
+
+*Note: my command `sudo ufw allow (port number)` configures the firewall to allow the ports we want to allow*.
+
+*To implement the changes made to the server configuration, we can type the command `sudo systemctl reload ssh`.
+
+Redirect local port 8080 to port 80 on a remote server: `ssh -L 8080:localhost:80 username@IP-adress`.
+3.  Access the application via the local port:
+ Open a browser and go to http://localhost:8080.
 
