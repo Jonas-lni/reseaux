@@ -106,9 +106,54 @@ Routeur Admin
 ![routecomm.jpg](../_resources/routecomm.jpg)
 
 
+**5- Configuration des Serveurs et Ordinateurs (PC):**
 
+- Serveurs :
+  1. Serveur Admin :
+Passerelle serveur:
+![servadmin.jpg](:/8faf5ce305fb4b59b00a26efdaa008cc)
 
+FastEthernet0 
+![servadmin1.jpg](:/39f3791746c542ff9f280348e7f18833)
 
+  2. Serveur Tech: pereil pour le serveur **TECH**
+*La passerelle est : 192.168.2.10*
+*Le serveur DNS est : 8.8.8.8*
+
+  3. Serveur Comm: pour le serveur **COMM**
+*La passerelle est : 192.168.3.10*
+*Le serveur DNS est : 8.8.8.8*
+
+- Ordinateurs (PC):
+   1. PC Admin:
+ Pc1 Admin:
+![Pc1Admin1.jpg](:/3609572c84df4821aef0b3b3f0fe20bc)
+![Pc2Admin2.jpg](:/af211611f0564c0080b9714f59a58873)
+
+Pc2 Admin: 
+*IP : 192.168.1.200*
+*Passerelle: 192.168.1.1*
+*Adresse DNS: 8.8.8.8*
+
+   3. PC Tech:
+ Pc1 Tech:
+![pc1tech1.jpg](:/47238d6a72c34b34ab4adf9c8fc1169d)
+![pc2tech2.jpg](:/85374da9f5cf402ca8cf3d59c2b74ea2)
+
+ Pc2 Tech:
+*IP : 192.168.2.200*
+*Passerelle: 192.168.2.1*
+*Adresse DNS: 8.8.8.8*
+  
+   5. PC Comm:
+Pc1 Comm:
+![Pc1comm1.jpg](:/fd5e530a3445432a89edff5d7ecdc155)
+![Pc1comm2.jpg](:/9d901f2e11444b799b823e43b6c3df66)
+
+Pc2 Comm: 
+*IP : 192.168.3.200*
+*Passerelle: 192.168.3.1*
+*Adresse DNS: 8.8.8.8*
 
 
 
