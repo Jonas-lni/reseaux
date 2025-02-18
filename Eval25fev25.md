@@ -1,4 +1,5 @@
 # Evaluation du 18 février 2025
+
 # Réseau TCP/IP UDP
 
 ## 1. Introduction
@@ -21,11 +22,27 @@ Protocoles complémentaires :
 
 L'évaluation permet de comprendre les bases techniques des réseaux et leur fonctionnement, en abordant les protocoles, la gestion des adresses, le transport des données et leur routage. Cela sert à bien appréhender le processus complet d'échange d'informations à travers un réseau informatique.
 
+## 2. Liste des manipulations réalisées  
+Décrivez chaque exercice, incluant : 
+o Les commandes u lisées (exemple : configura on d'une adresse IP, simula on d'un 
+routage dynamique). 
+o Le contexte (tests de connectivité, configuration de DHCP, analyse avec Wireshark). 
+o Les résultats attendus après chaque manipulation. 
 
+## 3. Problèmes rencontrés et solu ons 
+o Énumérez les difficultés rencontrées et la manière dont vous les avez résolues. 
+o Décrivez comment vous avez iden fié et résolu ces problèmes. 
 
+## 4. Analyse théorique 
+o Expliquez l'importance des protocoles TCP/IP dans les réseaux modernes. 
+o Discutez des avantages des différents protocoles (TCP, UDP). 
+o Incluez des observa ons faites à l'aide d'ou ls comme Wireshark ou des simulateurs. 
 
+## 5. Conclusion 
+o Résumez vos apprentissages sur les protocoles TCP/IP et leur impact sur la connectivité réseau. 
 
-
+## 6. Ressources 
+o Fournissez les liens vers les documents et tutoriels utilisés pendant le TP
 
 
 ## Quizz
