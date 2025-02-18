@@ -24,6 +24,96 @@ L'évaluation permet de comprendre les bases techniques des réseaux et leur fon
 
 ## 2. Liste des manipulations réalisées  
 Décrivez chaque exercice, incluant : 
+o Les commandes utilisées (exemple : configura on d'une adresse IP, simula on d'un routage dynamique). 
+
+**1- Insertion de :**
+    - Trois *routeurs* : ADMIN - TECH - COMM
+	- Un *switch* et trois *serveurs*
+	- Six ordinateurs *PC*
+	
+**2- Cablage et connexion physique:** connexion du matériel inséré avec le cable *copper straight through* 
+
+![insertion.jpg](../_resources/insertion-1.jpg)
+
+**3- Configuration des interfaces réseaux**
+Dans cette étape, nous allons procéder à la configuration des routeurs, Pc et serveurs. 
+
+- Routeur Admin :
+  *Interface FastEthernet 0/0* :
+   IP de configuration : 192.168.1.1
+   Masque de sous-réseau : 255.255.255.0
+
+  *Interface FastEthernet 0/1* :
+   IP de configuration : 10.0.0.1
+   Masque de sous-réseau : 255.255.255.0
+
+Voir prise d'écran suivantes : 
+Routeur Admin 
+
+ *Interface FastEthernet 0/0* 
+![Routeuradmi.jpg](../_resources/Routeuradmi-1.jpg)
+
+ *Interface FastEthernet 0/1* 
+![Routeuradmi1.jpg](../_resources/Routeuradmi1-1.jpg)
+
+- Routeur Tech :
+  *Interface FastEthernet 0/0* :
+   IP de configuration : 192.168.2.1
+   Masque de sous-réseau : 255.255.255.0
+
+  *Interface FastEthernet 0/1* :
+   IP de configuration : 10.0.0.2
+   Masque de sous-réseau : 255.255.255.0
+
+  *Interface FastEthernet 0/0* :
+![tech0.jpg](../_resources/tech0-1.jpg)
+
+
+  *Interface FastEthernet 0/1* :
+![tech1.jpg](../_resources/tech1-1.jpg)
+
+
+- Routeur Comm :
+  *Interface FastEthernet 0/0* :
+   IP de configuration : 192.168.3.1
+   Masque de sous-réseau : 255.255.255.0
+
+  *Interface FastEthernet 0/1* :
+   IP de configuration : 10.0.0.3
+   Masque de sous-réseau : 255.255.255.0
+
+*Interface FastEthernet 0/0* :
+![comm0.jpg](../_resources/comm0-1.jpg)
+
+*Interface FastEthernet 0/1* :
+![comm1.jpg](../_resources/comm1-1.jpg)
+
+**3-Activation  et sauvegarde de la configuration de chaque interface réseau** avec 
+ **Activation** : *no shutdown*
+ **Sauvegarde** : *write memory*
+![noshutdown.jpg](../_resources/noshutdown-1.jpg)
+
+
+**4- Ajout des routes:**
+
+- *a -Route Admin*
+![routeadmin.jpg](../_resources/routeadmin.jpg)
+
+- *b -Route Tech*
+![routetech.jpg](../_resources/routetech.jpg)
+
+- *c -Route Comm*
+![routecomm.jpg](../_resources/routecomm.jpg)
+
+
+
+
+
+
+
+
+## 2. Liste des manipulations réalisées  
+Décrivez chaque exercice, incluant : 
 o Les commandes u lisées (exemple : configura on d'une adresse IP, simula on d'un 
 routage dynamique). 
 o Le contexte (tests de connectivité, configuration de DHCP, analyse avec Wireshark). 
