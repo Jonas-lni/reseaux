@@ -47,9 +47,7 @@ o Fournissez les liens vers les documents et tutoriels utilisés pendant le TP
 
 ## Quizz
 
-**1. La principale différence entre TCP et UDP est :**
-
-_A. TCP garantit la fiabilité, UDP est plus rapide._
+**1. La principale différence entre TCP et UDP est :** _A. TCP garantit la fiabilité, UDP est plus rapide._
 
 **2. La couche du modèle TCP/IP qui gère le routage des paquets est :** la couche Internet
 
