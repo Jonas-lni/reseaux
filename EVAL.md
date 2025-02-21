@@ -32,7 +32,7 @@ Décrivez chaque exercice, incluant :
 	
 **2- Cablage et connexion physique:** connexion du matériel inséré avec le cable *copper straight through* 
 
-![insertion.jpg](../_resources/insertion.jpg)
+![insertion.jpg](./_resoureces/insertion.jpg)
 
 **3- Configuration des interfaces réseaux**
 Dans cette étape, nous allons procéder à la configuration des routeurs, Pc et serveurs. 
