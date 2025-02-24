@@ -50,10 +50,10 @@ Voir prise d'écran suivantes :
 Routeur Admin 
 
  *Interface FastEthernet 0/0* 
-![Routeuradmi.jpg](./_resources/Routeuradmi.jpg)
+![Routeuradmi.jpg](./_resoureces/Routeuradmi.jpg)
 
  *Interface FastEthernet 0/1* 
-![Routeuradmi1.jpg](./_resources/Routeuradmi1.jpg)
+![Routeuradmi1.jpg](./_resoureces/Routeuradmi1.jpg)
 
 - Routeur Tech :
   *Interface FastEthernet 0/0* :
@@ -65,11 +65,11 @@ Routeur Admin
    Masque de sous-réseau : 255.255.255.0
 
   *Interface FastEthernet 0/0* :
-![tech0.jpg](./_resources/tech0.jpg)
+![tech0.jpg](./_resoureces/tech0.jpg)
 
 
   *Interface FastEthernet 0/1* :
-![tech1.jpg](./_resources/tech1.jpg)
+![tech1.jpg](./_resoureces/tech1.jpg)
 
 
 - Routeur Comm :
@@ -82,27 +82,27 @@ Routeur Admin
    Masque de sous-réseau : 255.255.255.0
 
 *Interface FastEthernet 0/0* :
-![comm0.jpg](./_resources/comm0.jpg)
+![comm0.jpg](./_resoureces/comm0.jpg)
 
 *Interface FastEthernet 0/1* :
-![comm1.jpg](./_resources/comm1.jpg)
+![comm1.jpg](./_resoureces/comm1.jpg)
 
 **3-Activation  et sauvegarde de la configuration de chaque interface réseau** avec 
  **Activation** : *no shutdown*
  **Sauvegarde** : *write memory*
-![noshutdown.jpg](./_resources/noshutdown.jpg)
+![noshutdown.jpg](./_resoureces/noshutdown.jpg)
 
 
 **4- Ajout des routes:**
 
 - *a -Route Admin*
-![routeadmin.jpg](./_resources/routeadmin.jpg)
+![routeadmin.jpg](./_resoureces/routeadmin.jpg)
 
 - *b -Route Tech*
-![routetech.jpg](./_resources/routetech.jpg)
+![routetech.jpg](./_resoureces/routetech.jpg)
 
 - *c -Route Comm*
-![routecomm.jpg](./_resources/routecomm.jpg)
+![routecomm.jpg](./_resoureces/routecomm.jpg)
 
 
 
@@ -112,10 +112,10 @@ Routeur Admin
 - Serveurs :
   1. Serveur Admin :
 Passerelle serveur:
-![servadmin.jpg](./_resources/servadmin.jpg)
+![servadmin.jpg](./_resoureces/servadmin.jpg)
 
 FastEthernet0 
-![servadmin1.jpg](./_resources/servadmin1.jpg)
+![servadmin1.jpg](./_resoureces/servadmin1.jpg)
 
   2. Serveur Tech: pereil pour le serveur **TECH**
 *La passerelle est : 192.168.2.10*
@@ -128,8 +128,8 @@ FastEthernet0
 - Ordinateurs (PC):
    1. PC Admin:
  Pc1 Admin:
-![Pc1Admin1.jpg](./_resources/Pc1Admin1.jpg)
-![Pc2Admin2.jpg](./_resources/Pc2Admin2.jpg)
+![Pc1Admin1.jpg](./_resoureces/Pc1Admin1.jpg)
+![Pc2Admin2.jpg](./_resoureces/Pc2Admin2.jpg)
 
 Pc2 Admin: 
 *IP : 192.168.1.200*
@@ -138,8 +138,8 @@ Pc2 Admin:
 
    3. PC Tech:
  Pc1 Tech:
-![pc1tech1.jpg](./_resources/pc1tech1.jpg)
-![pc2tech2.jpg](./_resources/pc2tech2.jpg)
+![pc1tech1.jpg](./_resoureces/pc1tech1.jpg)
+![pc2tech2.jpg](./_resoureces/pc2tech2.jpg)
 
  Pc2 Tech:
 *IP : 192.168.2.200*
@@ -148,8 +148,8 @@ Pc2 Admin:
   
    5. PC Comm:
 Pc1 Comm:
-![Pc1comm1.jpg](./_resources/Pc1comm1.jpg)
-![Pc1comm2.jpg](./_resources/Pc1comm2.jpg)
+![Pc1comm1.jpg](./_resoureces/Pc1comm1.jpg)
+![Pc1comm2.jpg](./_resoureces/Pc1comm2.jpg)
 
 Pc2 Comm: 
 *IP : 192.168.3.200*
@@ -162,80 +162,80 @@ Pc2 Comm:
 **Test de connectivité dans chaque sous-réseau**
 1. Sous-réseau Admin:
    *Réalisation d'un ping vers l'IP 192.168.1.200 depuis le PC1-Admin*
-![ping1.200.jpg](./_resources/ping1.200.jpg)
+![ping1.200.jpg](./_resoureces/ping1.200.jpg)
    *Réalisation d'un ping vers la Passerelle 192.168.1.100 depuis le PC2-Admin*
-![ping1.100.jpg](./_resources/ping1.100.jpg)
+![ping1.100.jpg](./_resoureces/ping1.100.jpg)
 
 3. Sous-réseau Tech:
    *Réalisation d'un ping vers l'IP 192.168.2.200 depuis le PC1-Tech*
-![ping2.200.jpg](./_resources/ping2.200-1.jpg)
+![ping2.200.jpg](./_resourcees/ping2.200-1.jpg)
    *Réalisation d'un ping vers la Passerelle 192.168.2.100 depuis le PC2-Tech*
-![ping2100.jpg](./_resources/ping2100.jpg)
+![ping2100.jpg](./_resoureces/ping2100.jpg)
 
 5. Sous-réseau Comm:
    *Réalisation d'un ping vers l'IP 192.168.3.200 depuis le PC1-Comm*
-![ping3200.jpg](./_resources/ping3200.jpg)
+![ping3200.jpg](./_resoureces/ping3200.jpg)
    *Réalisation d'un ping vers la Passerelle 192.168.3.100 depuis le PC2-Comm*
-![ping3100.jpg](./_resources/ping3100.jpg)
+![ping3100.jpg](./_resoureces/ping3100.jpg)
 
 **Test de connectivité entre les sous-réseaux**
 
 *Ping Admin vers Tech* ping 192.168.1.100 vers 192.168.2.200
-![ping2.200.jpg](./_resources/ping2.200.jpg)
+![ping2.200.jpg](./_resoureces/ping2.200.jpg)
 
 
 *Ping Admin vers Comm* ping 192.168.1.200 vers 192.168.2.100
-![ping2100-2.jpg](./_resources/ping2100-2.jpg)
+![ping2100-2.jpg](./_resoureces/ping2100-2.jpg)
 
 *Ping Tech vers Admin* ping 192.168.2.100 vers 192.168.1.200
-![ping1.200-2.jpg](./_resources/ping1.200-2.jpg)
+![ping1.200-2.jpg](./_resoureces/ping1.200-2.jpg)
 
 *Ping Tech vers Comm* ping 192.168.2.200 vers 192.168.3.100
-![ping3100-2.jpg](./_resources/ping3100-2.jpg)
+![ping3100-2.jpg](./_resoureces/ping3100-2.jpg)
 
 **_Observation: le ping n'a pas marché_** : Ce test de connectivité n'a pas marché parce qu'une des interfaces réseaux du routeur **Comm** n'est pas activée
-![probleme.jpg](./_resources/probleme.jpg)
+![probleme.jpg](./_resoureces/probleme.jpg)
 
 ** A la suite de l'activation de la carte réseau FastEthernet0/1: le ping à marché**
 Voir la capture d'écran suivante:
 
-![problemeresolu.jpg](./_resources/problemeresolu.jpg)
+![problemeresolu.jpg](./_resoureces/problemeresolu.jpg)
 *Ping Comm vers Admin* ping 192.168.3.100 vers 192.168.1.200
-![ping1200-2.jpg](./_resources/ping1200-2.jpg)
+![ping1200-2.jpg](./_resoureces/ping1200-2.jpg)
 *Ping Comm vers Tech* ping 192.168.3.200 vers 192.168.2.200
-![ping2200-2.jpg](./_resources/ping2200-2.jpg)
+![ping2200-2.jpg](./_resoureces/ping2200-2.jpg)
 
 *Les test de connectivité entre les départements ont tous été effectué avec succés*
 
 
 ### Réalisation de ping en filtrant le protocole TCP :
 1. Selection du protocole TCP :
-![filtretcp.jpg](./_resources/filtretcp.jpg)
+![filtretcp.jpg](./_resoureces/filtretcp.jpg)
 2. Réalisation d'un ping depuis un des PC du réseau:
-![pingtcp1.jpg](./_resources/pingtcp1.jpg)
+![pingtcp1.jpg](./_resoureces/pingtcp1.jpg)
 
 Tous les paquets ont été transmis (aucun n'a été perdu)
-![pingtcp2.jpg](./_resources/pingtcp2.jpg)
+![pingtcp2.jpg](./_resoureces/pingtcp2.jpg)
 
 
 ### Réalisation de ping en filtrant le protocole UDP:
 1. Selection du protocole UDP:
-![filtreudp.jpg](./_resources/filtreudp.jpg)
+![filtreudp.jpg](./_resoureces/filtreudp.jpg)
 2. Réalisation d'un ping depuis un des PC du réseau:
-![pingudp1.jpg](./_resources/pingudp1.jpg)
+![pingudp1.jpg](./_resoureces/pingudp1.jpg)
 
 Tous les paquets ont été transmis *mais il se pourrait qu'il y est des pertes* parce que le protocole UDP ne vérifie pas l'arrivée des paquets. Lors d'une vision d'une vidéo par exemple, la vidéo. Le serveur continue d'envoyer du contenu malgré la rupture de la transmission
 
 *Résultat du ping lors de la selection du port UDP*
-![resultatpingudp.jpg](./_resources/resultatpingudp.jpg)
+![resultatpingudp.jpg](./_resoureces/resultatpingudp.jpg)
 
 ### Vértification de la connectivité avec ICMP 
 1. Réalisation d'un ping depuis Admin vers le routeur ADMIN
-![ICMP1.jpg](./_resources/ICMP1.jpg)
+![ICMP1.jpg](./_resoureces/ICMP1.jpg)
 2. Réalisation d'un ping depuis Tech vers le routeur TECH
-![ICPM2.PNG](./_resources/ICPM2.PNG)
+![ICPM2.PNG](./_resoureces/ICPM2.PNG)
 3. Réalisation d'un ping depuis Comm vers le routeur COMM
-![ICMP3..PNG](./_resources/ICMP3.PNG)
+![ICMP3..PNG](./_resoureces/ICMP3.PNG)
 
 **Les connexions entre les PC et les routeurs de chaque sous-réseau sont bien établies et fonctionnent parfaitement sans aucune perte de paquet**
 
@@ -253,7 +253,7 @@ Les résultats attendus entre chaque manipulation sont visibles dans chaque mani
 J'ai rencontré un problème de connectivité lors du ping 192.168.3.100 depuis le **PC TECH2** à cause de la non activation de l'interface FastEthernet0/1 du routeur **COMM.
 
 Voir photo :
-![probleme.jpg](./_resources/probleme-1.jpg)
+![probleme.jpg](./_resoureces/probleme-1.jpg)
 
 Le ping avait bien fonctionné lorsque l'activation de cette interface réseau a été effectuée avec la commande `no shutdown` puis `write memory` après deux `exit`
 
