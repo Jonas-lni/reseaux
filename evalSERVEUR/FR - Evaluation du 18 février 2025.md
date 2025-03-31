@@ -32,7 +32,7 @@ Décrivez chaque exercice, incluant :
 	
 **2- Cablage et connexion physique:** connexion du matériel inséré avec le cable *copper straight through* 
 
-![insertion.jpg](_resources/insertion.jpg)
+![insertion.jpg](._resources/insertion.jpg)
 
 **3- Configuration des interfaces réseaux**
 Dans cette étape, nous allons procéder à la configuration des routeurs, Pc et serveurs. 
@@ -50,10 +50,10 @@ Voir prise d'écran suivantes :
 Routeur Admin 
 
  *Interface FastEthernet 0/0* 
-![Routeuradmi.jpg](_resources/Routeuradmi.jpg)
+![Routeuradmi.jpg](._resources/Routeuradmi.jpg)
 
  *Interface FastEthernet 0/1* 
-![Routeuradmi1.jpg](_resources/Routeuradmi1.jpg)
+![Routeuradmi1.jpg](._resources/Routeuradmi1.jpg)
 
 - Routeur Tech :
   *Interface FastEthernet 0/0* :
@@ -65,11 +65,11 @@ Routeur Admin
    Masque de sous-réseau : 255.255.255.0
 
   *Interface FastEthernet 0/0* :
-![tech0.jpg](_resources/tech0.jpg)
+![tech0.jpg](._resources/tech0.jpg)
 
 
   *Interface FastEthernet 0/1* :
-![tech1.jpg](_resources/tech1.jpg)
+![tech1.jpg](._resources/tech1.jpg)
 
 
 - Routeur Comm :
@@ -82,27 +82,27 @@ Routeur Admin
    Masque de sous-réseau : 255.255.255.0
 
 *Interface FastEthernet 0/0* :
-![comm0.jpg](_resources/comm0.jpg)
+![comm0.jpg](._resources/comm0.jpg)
 
 *Interface FastEthernet 0/1* :
-![comm1.jpg](_resources/comm1.jpg)
+![comm1.jpg](._resources/comm1.jpg)
 
 **3-Activation  et sauvegarde de la configuration de chaque interface réseau** avec 
  **Activation** : *no shutdown*
  **Sauvegarde** : *write memory*
-![noshutdown.jpg](_resources/noshutdown.jpg)
+![noshutdown.jpg](._resources/noshutdown.jpg)
 
 
 **4- Ajout des routes:**
 
 - *a -Route Admin*
-![routeadmin.jpg](_resources/routeadmin.jpg)
+![routeadmin.jpg](._resources/routeadmin.jpg)
 
 - *b -Route Tech*
-![routetech.jpg](_resources/routetech.jpg)
+![routetech.jpg](._resources/routetech.jpg)
 
 - *c -Route Comm*
-![routecomm.jpg](_resources/routecomm.jpg)
+![routecomm.jpg](._resources/routecomm.jpg)
 
 
 **5- Configuration des Serveurs et Ordinateurs (PC):**
@@ -110,10 +110,10 @@ Routeur Admin
 - Serveurs :
   1. Serveur Admin :
 Passerelle serveur:
-![servadmin.jpg](_resources/servadmin.jpg)
+![servadmin.jpg](._resources/servadmin.jpg)
 
 FastEthernet0 
-![servadmin1.jpg](_resources/servadmin1.jpg)
+![servadmin1.jpg](._resources/servadmin1.jpg)
 
   2. Serveur Tech: pereil pour le serveur **TECH**
 *La passerelle est : 192.168.2.10*
@@ -126,8 +126,8 @@ FastEthernet0
 - Ordinateurs (PC):
    1. PC Admin:
  Pc1 Admin:
-![Pc1Admin1.jpg](_resources/Pc1Admin1.jpg)
-![Pc2Admin2.jpg](_resources/Pc2Admin2.jpg)
+![Pc1Admin1.jpg](._resources/Pc1Admin1.jpg)
+![Pc2Admin2.jpg](._resources/Pc2Admin2.jpg)
 
 Pc2 Admin: 
 *IP : 192.168.1.200*
@@ -136,8 +136,8 @@ Pc2 Admin:
 
    3. PC Tech:
  Pc1 Tech:
-![pc1tech1.jpg](_resources/pc1tech1.jpg)
-![pc2tech2.jpg](_resources/pc2tech2.jpg)
+![pc1tech1.jpg](._resources/pc1tech1.jpg)
+![pc2tech2.jpg](._resources/pc2tech2.jpg)
 
  Pc2 Tech:
 *IP : 192.168.2.200*
@@ -146,8 +146,8 @@ Pc2 Admin:
   
    5. PC Comm:
 Pc1 Comm:
-![Pc1comm1.jpg](_resources/Pc1comm1.jpg)
-![Pc1comm2.jpg](_resources/Pc1comm2.jpg)
+![Pc1comm1.jpg](._resources/Pc1comm1.jpg)
+![Pc1comm2.jpg](._resources/Pc1comm2.jpg)
 
 Pc2 Comm: 
 *IP : 192.168.3.200*
@@ -160,7 +160,7 @@ Pc2 Comm:
 **Test de connectivité dans chaque sous-réseau**
 1. Sous-réseau Admin:
    *Réalisation d'un ping vers l'IP 192.168.1.200 depuis le PC1-Admin*
-![ping1.200.jpg](_resources/ping1.200.jpg)
+![ping1.200.jpg](._resources/ping1.200.jpg)
    *Réalisation d'un ping vers la Passerelle 192.168.1.100 depuis le PC2-Admin*
 ![ping1.100.jpg](./_resources/ping1.100.jpg)
 
