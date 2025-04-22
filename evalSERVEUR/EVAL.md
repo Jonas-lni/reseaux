@@ -50,10 +50,10 @@ Voir prise d'écran suivantes :
 Routeur Admin 
 
  *Interface FastEthernet 0/0* 
-![Routeuradmi.jpg](./_resoureces/Routeuradmi.jpg)
+![Routeuradmi.jpg](./_ressources/Routeuradmi.jpg)
 
  *Interface FastEthernet 0/1* 
-![Routeuradmi1.jpg](./_resoureces/Routeuradmi1.jpg)
+![Routeuradmi1.jpg](./_ressources/Routeuradmi1.jpg)
 
 - Routeur Tech :
   *Interface FastEthernet 0/0* :
