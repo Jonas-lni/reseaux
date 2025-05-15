@@ -126,3 +126,106 @@ FastEthernet0/0.20    192.168.20.1     YES ...
 * * *
 
 Souhaites-tu que je t’aide pas à pas à tout vérifier depuis ton fichier Packet Tracer ?
+
+
+# configuration des Switch
+
+Merci pour ta précision. Ce que tu vois dans l'interface VLAN dans **Packet Tracer** (dans l'onglet de configuration graphique du switch ou routeur) est **normal** : les VLANs comme `.10`, `.20`, `.30` n’apparaissent **pas automatiquement** dans cette liste, **sauf si tu les as bien créés ET configurés dans le bon équipement (et pas dans le routeur)**.
+
+---
+
+## 🎯 Voici pourquoi tu ne vois pas les VLAN `.10`, `.20`, `.30`
+
+1. **Ces VLANs ne sont pas créés automatiquement sur les switchs**, même si tu configures les sous-interfaces sur le routeur (`Gig0/0.10`, etc).
+2. Les **sous-interfaces comme `GigabitEthernet0/0.10` sur le routeur** ne correspondent **pas à des VLANs visibles dans le switch.**
+3. Les VLANs doivent **être créés sur le switch**, pas sur le routeur.
+
+---
+
+## ✅ Solution étape par étape :
+
+### 🔧 Sur le **Switch**, crée les VLANs :
+
+```bash
+enable
+configure terminal
+
+vlan 10
+name VLAN10
+
+vlan 20
+name VLAN20
+
+vlan 30
+name VLAN30
+
+end
+```
+
+> 🔍 Tu peux ensuite vérifier avec :
+
+```bash
+show vlan brief
+```
+
+Tu verras :
+
+```
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------
+1    default                          active    Fa0/1, Fa0/2, ...
+10   VLAN10                           active    
+20   VLAN20                           active    
+30   VLAN30                           active    
+```
+
+---
+
+### 🔧 Ensuite, attribue les ports aux bons VLANs
+
+```bash
+interface FastEthernet0/2
+switchport mode access
+switchport access vlan 10
+
+interface FastEthernet0/3
+switchport mode access
+switchport access vlan 20
+
+interface FastEthernet0/4
+switchport mode access
+switchport access vlan 30
+```
+
+---
+
+### 🔧 Configure le port vers le routeur en **mode trunk** :
+
+```bash
+interface FastEthernet0/1
+switchport mode trunk
+```
+
+---
+
+## 🧠 Important :
+
+* Les sous-interfaces `.10`, `.20`, `.30` sont **créées sur le routeur**, pas sur le switch.
+* Les VLANs eux-mêmes doivent être **créés manuellement sur les switchs**, sinon **aucune communication ne sera possible**.
+* La **communication entre VLANs** (inter-VLAN routing) se fait **via les sous-interfaces du routeur**, mais les **VLANs doivent exister sur les switches.**
+
+---
+
+## ✅ En résumé
+
+| Action                         | Appareil | Commande                                                        |
+| ------------------------------ | -------- | --------------------------------------------------------------- |
+| Créer VLAN 10, 20, 30          | Switch   | `vlan 10`, `vlan 20`, `vlan 30`                                 |
+| Associer un port à un VLAN     | Switch   | `switchport access vlan X`                                      |
+| Configurer trunk vers routeur  | Switch   | `switchport mode trunk`                                         |
+| Configurer les sous-interfaces | Routeur  | `interface Gig0/0.X`, `encapsulation dot1Q X`, `ip address ...` |
+
+---
+
+Souhaites-tu que je t’envoie un exemple `.pkt` complet avec tout ça configuré ?
+
