@@ -1,18 +1,11 @@
 # Choix du Routeur et configuration
 
-**Je dois prendre quel routeur pour connecter les deux ?**
+###  **1. Avec un routeur (Router-on-a-Stick)**
 
-Très bonne question ! Pour connecter deux VLANs dans Cisco Packet Tracer, tu peux choisir entre deux méthodes principales :
-
-Suivre ces démarches sans toucher à la configuration dans Config
----
-
-### ✅ **1. Avec un routeur (Router-on-a-Stick)**
-
-#### 🔧 Routeur recommandé :  
+#### Routeur recommandé :  
 **Cisco 2811** (ou tout autre routeur avec une interface FastEthernet ou GigabitEthernet disponible).
 
-#### 🧰 Matériel :
+#### Matériel :
 - 1 routeur (ex. : Cisco 2811)
 - 1 switch (déjà configuré avec tes VLANs)
 - 1 câble **Ethernet** entre le switch (port en mode **trunk**) et le routeur
@@ -49,7 +42,7 @@ exit
 
 ---
 
-### ✅ **2. Alternative : Utiliser un switch L3 (comme le Catalyst 3560)**
+### **2. Alternative : Utiliser un switch L3 (comme le Catalyst 3560)**
 
 Ce switch permet de faire du routage inter-VLAN sans routeur. Si tu veux cette méthode, je peux te guider aussi.
 
@@ -66,7 +59,7 @@ Merci pour ta vigilance — c’est **justement là le cœur du problème** : si
 
 * * *
 
-### ✅ Pour corriger ça : configure l’IP manuellement
+### Pour corriger ça : configure l’IP manuellement
 
 Connecte-toi à ton routeur et entre les commandes suivantes **exactement** :
 
@@ -91,7 +84,7 @@ exit
 
 * * *
 
-### ❗ Supprimer l’IP de Fa0/0 si nécessaire :
+### Supprimer l’IP de Fa0/0 si nécessaire :
 
 Si tu vois une IP sur l'interface physique `Fa0/0`, supprime-la avec :
 
@@ -142,7 +135,7 @@ Merci pour ta précision. Ce que tu vois dans l'interface VLAN dans **Packet Tra
 
 ---
 
-## ✅ Solution étape par étape :
+## Solution étape par étape :
 
 ### 🔧 Sur le **Switch**, crée les VLANs :
 
@@ -162,7 +155,7 @@ name VLAN30
 end
 ```
 
-> 🔍 Tu peux ensuite vérifier avec :
+> Tu peux ensuite vérifier avec :
 
 ```bash
 show vlan brief
@@ -181,7 +174,7 @@ VLAN Name                             Status    Ports
 
 ---
 
-### 🔧 Ensuite, attribue les ports aux bons VLANs
+### Ensuite, attribue les ports aux bons VLANs
 
 ```bash
 interface FastEthernet0/2
@@ -199,7 +192,7 @@ switchport access vlan 30
 
 ---
 
-### 🔧 Configure le port vers le routeur en **mode trunk** :
+### Configure le port vers le routeur en **mode trunk** :
 
 ```bash
 interface FastEthernet0/1
@@ -208,7 +201,7 @@ switchport mode trunk
 
 ---
 
-## 🧠 Important :
+## Important :
 
 * Les sous-interfaces `.10`, `.20`, `.30` sont **créées sur le routeur**, pas sur le switch.
 * Les VLANs eux-mêmes doivent être **créés manuellement sur les switchs**, sinon **aucune communication ne sera possible**.
@@ -216,7 +209,7 @@ switchport mode trunk
 
 ---
 
-## ✅ En résumé
+## En résumé
 
 | Action                         | Appareil | Commande                                                        |
 | ------------------------------ | -------- | --------------------------------------------------------------- |
@@ -227,5 +220,4 @@ switchport mode trunk
 
 ---
 
-Souhaites-tu que je t’envoie un exemple `.pkt` complet avec tout ça configuré ?
 
