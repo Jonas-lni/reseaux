@@ -10,7 +10,7 @@
 - 1 switch (déjà configuré avec tes VLANs)
 - 1 câble **Ethernet** entre le switch (port en mode **trunk**) et le routeur
 
-#### ⚙️ Exemple de configuration sur le routeur :
+#### Exemple de configuration sur le routeur :
 
 ##### Étape 1 : Configurer l'interface en sous-interfaces (trunk)
 ```bash
@@ -127,7 +127,7 @@ Merci pour ta précision. Ce que tu vois dans l'interface VLAN dans **Packet Tra
 
 ---
 
-## 🎯 Voici pourquoi tu ne vois pas les VLAN `.10`, `.20`, `.30`
+## Voici pourquoi tu ne vois pas les VLAN `.10`, `.20`, `.30`
 
 1. **Ces VLANs ne sont pas créés automatiquement sur les switchs**, même si tu configures les sous-interfaces sur le routeur (`Gig0/0.10`, etc).
 2. Les **sous-interfaces comme `GigabitEthernet0/0.10` sur le routeur** ne correspondent **pas à des VLANs visibles dans le switch.**
